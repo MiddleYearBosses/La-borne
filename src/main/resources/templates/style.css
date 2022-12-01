@@ -1,0 +1,287 @@
+/* Corps du site pas parfait */
+
+html {
+    margin:0;
+    padding:0;
+    min-height: 100vh;
+}
+
+.structure {
+    margin:0;
+    padding:0;
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center center;
+    font-family:Calibri,sans-serif;
+    color:#fff;
+    height:100%;
+    position: relative;
+}
+
+#structure_pg1{
+    background-color: #0CE8AD;
+    background-image:
+            url(img/fond_de_site_AC.jpg);
+}
+
+#structure_pg2{
+    background-color: #FFC7BF;
+    background-image:
+            url(img/page2.jpg);
+}
+
+
+/* Header et boutons */
+
+header{
+    margin:0;
+    padding:0;
+    height:15%;
+    text-align: center;
+    font-style: italic;
+    border-bottom-style:solid;
+    border-bottom-width:3px;
+    position: relative;
+}
+
+.button{
+    border-radius: 50%;
+    box-shadow:5px 10px 20px rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    display: block;
+    position: absolute;
+    border: solid;
+}
+
+#profilbut{
+    background-color: #0CE8AD;
+    border-color: white;
+    width: 300px;
+}
+
+#session{
+
+    background-color: #F6FB7B;
+    border-color: pink;
+    height: 70px;
+    width: 70px;
+    top: 10px;
+    right: 10px;
+
+}
+
+#peach{
+    background-color: white;
+    border:none;
+    height: 40px;
+    width: 40px;
+    top: 25px;
+    right: -10px;
+
+}
+
+#pen{
+
+    background-color: #F6FB7B;
+    border:none;
+    height: 40px;
+    width: 40px;
+    top: 25px;
+    right: 40px;
+
+}
+
+a{	text-decoration:none;
+    color:#fff;
+    font-style: italic;
+    margin:0;
+}
+
+/* On change les couleur */
+
+#accueil_pg1{
+    border-bottom-color:#F6FB7B;
+    background-color: #0CE8AD;
+}
+
+#accueil_pg2{
+
+    background-color: #FFC7BF;
+    border-bottom-color:#FCFFA3;
+}
+
+#accueil_pg3{
+
+    background-color: #FFAC7B;
+    border-bottom-color:#E5EB36;
+}
+
+.forme{
+
+    opacity: 0.7;
+    color: #000;
+    margin: 10% auto;
+    padding: 5%;
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+
+.forme a{
+
+    margin:auto;
+    margin-top:1em;
+    color:#0CE8AD;
+}
+
+form{
+
+    background-color: white;
+    gap:10px;
+    border-radius: 20px;
+
+}
+
+#profil{
+
+    background-color: rgb(244, 230, 230);
+    gap:0px;
+    margin: 0;
+    padding-bottom: 30%;
+
+}
+
+.flex{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Main */
+
+.main_pg {
+
+    margin:auto;
+    padding:0;
+    display: grid;
+    grid-template-columns : 50% 50%;
+    gap:30px;
+    width: 95%;
+
+}
+
+h1{
+    margin:0;
+    text-shadow:1px 2px 2px #000;
+}
+
+h2{
+    text-shadow:1px 2px 2px #000;
+}
+
+p{
+    font-size:18px;
+}
+
+/* Les images */
+
+img{
+    width:100%;
+    max-width: 500px;
+    max-height: 281.5px;
+}
+
+
+.nook{
+    width:100px;
+    height: 100px;
+    align-items: center;
+    border-radius: 50%;
+    opacity: 1;
+
+}
+
+.ajout{
+    width: 500px;
+    opacity: 0.8;
+}
+
+main figure{
+    margin:2% auto;
+    max-width: 500px;
+    max-height: 281.5px;
+}
+
+figcaption{
+    position:relative;
+    bottom:20px;
+    left:0;
+    right:0;
+    padding:0;
+    text-align:center;
+    height:15%;
+    max-width: 500px;
+    width:100%;
+    line-height:2;
+    font-style:italic;
+    outline: solid;
+}
+
+.figcap_pg1{
+    background-color:pink;
+    border-color:white;
+}
+
+.figcap_pg2{
+    background-color:#62B38E;
+    border-color:grey;
+}
+
+.figcap_pg3{
+    background-color:#42E4FF;
+    border-color:white;
+}
+
+/* Barre de déroulement  */
+
+html::-webkit-scrollbar{
+    width:10px;
+    background: #F6FB7B;
+}
+
+/* Footer */
+footer{
+    margin:0;
+    padding:0;
+    position: sticky;
+    bottom:0;
+    height:15%;
+    width: 100%;
+    text-align: center;
+    line-height:4;
+    font-size:24px;
+    border-top-style:solid;
+    border-top-width:3px;
+}
+
+#footer_pg1{
+    background-color: #0CE8AD;
+    border-top-color:#F6FB7B;
+}
+
+#footer_pg2{
+    background-color: #FFC7BF;
+    border-top-color:#FDFFC9;
+}
+
+#footer_pg3{
+    background-color: #FFAC7B;
+    border-top-color:#E5EB36;
+}
+
+
+
