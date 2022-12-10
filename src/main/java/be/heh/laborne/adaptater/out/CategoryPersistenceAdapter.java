@@ -1,7 +1,7 @@
 package be.heh.laborne.adaptater.out;
 
 import be.heh.laborne.model.Category;
-import be.heh.laborne.port.in.CategoryListUseCase;
+import be.heh.laborne.port.in.interfaces.CategoryListUseCase;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

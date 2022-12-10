@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>La borne des soeurs doigts de fée</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <style>/* Corps du site pas parfait */
@@ -27,16 +27,16 @@ html {
   position: relative;
 }
 
-#structure_pg1{
+.structure_pg1{
   background-color: #0CE8AD;
   background-image:
           url(https://cdn.discordapp.com/attachments/839269329190912041/1047962859734310983/fond_de_site_AC.jpg);
 }
 
-#structure_pg2{
+.structure_pg2{
   background-color: #FFC7BF;
   background-image:
-          url(img/page2.jpg);
+          url(https://cdn.discordapp.com/attachments/839269329190912041/1047962859990159360/large.jpg);
 }
 
 
@@ -108,18 +108,18 @@ a{	text-decoration:none;
 
 /* On change les couleur */
 
-#accueil_pg1{
+.accueil_pg1{
   border-bottom-color:#F6FB7B;
   background-color: #0CE8AD;
 }
 
-#accueil_pg2{
+.accueil_pg2{
 
   background-color: #FFC7BF;
   border-bottom-color:#FCFFA3;
 }
 
-#accueil_pg3{
+.accueil_pg3{
 
   background-color: #FFAC7B;
   border-bottom-color:#E5EB36;
@@ -235,7 +235,6 @@ main figure{
   text-align:center;
   height:15%;
   max-width: 500px;
-  width:98%;
   line-height:2;
   font-style:italic;
   border: solid ;
@@ -244,6 +243,7 @@ main figure{
 .figcap_pg1{
   background-color:pink;
   border-color:white;
+  width:98%;
 }
 
 .figcap_pg2{
@@ -278,17 +278,17 @@ footer{
   border-top-width:3px;
 }
 
-#footer_pg1{
+.footer_pg1{
   background-color: #0CE8AD;
   border-top-color:#F6FB7B;
 }
 
-#footer_pg2{
+.footer_pg2{
   background-color: #FFC7BF;
   border-top-color:#FDFFC9;
 }
 
-#footer_pg3{
+.footer_pg3{
   background-color: #FFAC7B;
   border-top-color:#E5EB36;
 }
@@ -296,9 +296,9 @@ footer{
 
 </style>
 
-<body class="structure" id="structure_pg1">
+<body class="structure structure_pg1">
 
-<header id="accueil_pg1">
+<header class="accueil_pg1">
   <h1>La Borne des Soeurs Doigts de Fée</h1>
   <p>Bienvenue à la borne des soeurs doigts de fée, ici vous retrouverez les créations d'autres joueurs d'Animal Crossing !</p>
 </header>
@@ -312,7 +312,7 @@ footer{
 
 </main>
 
-<footer id="footer_pg1">
+<footer class="footer_pg1">
   <a href="mailto:morgane.vb@orange.fr"> Contactez nous !</a>
 </footer>
 

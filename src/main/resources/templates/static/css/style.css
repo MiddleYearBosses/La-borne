@@ -21,13 +21,13 @@ html {
 #structure_pg1{
     background-color: #0CE8AD;
     background-image:
-            url(img/fond_de_site_AC.jpg);
+            url(../img/fond_de_site_AC.jpg);
 }
 
 #structure_pg2{
     background-color: #FFC7BF;
     background-image:
-            url(img/page2.jpg);
+            url(../img/page2.jpg);
 }
 
 

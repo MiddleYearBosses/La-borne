@@ -2,7 +2,7 @@ package be.heh.laborne.adaptater;
 
 import be.heh.laborne.adaptater.in.CategoryController;
 import be.heh.laborne.model.Category;
-import be.heh.laborne.port.in.CategoryListUseCase;
+import be.heh.laborne.port.in.interfaces.CategoryListUseCase;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -11,7 +11,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
