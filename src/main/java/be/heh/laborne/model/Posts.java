@@ -1,6 +1,5 @@
 package be.heh.laborne.model;
 
-
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import java.util.Date;

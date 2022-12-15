@@ -16,7 +16,7 @@ public class PostsController {
     private final PostsUseCase postsUseCase;
     private List<Posts> posts;
 
-    @GetMapping("/test")
+    @GetMapping("/listing")
     public String postList(Model model){
         posts = postsUseCase.getPostsList();
         model.addAttribute("posts",posts);
