@@ -10,7 +10,7 @@ public class PostsMapper {
         List<Posts> postsList = new ArrayList<>();
 
         for (PostsJpaEntity postsJpaEntity : posts) {
-            postsList.add(new Posts(postsJpaEntity.getTitle(), postsJpaEntity.getPicture(), postsJpaEntity.getDescription(), postsJpaEntity.getCreatedAt()));
+            postsList.add(new Posts(postsJpaEntity.getTitle(), postsJpaEntity.getPicture(), postsJpaEntity.getDescription(), postsJpaEntity.getCreatedAt(), postsJpaEntity.getCategory()));
         }
         return postsList;
     }

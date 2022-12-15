@@ -1,5 +1,6 @@
 package be.heh.laborne.model;
 
+import be.heh.laborne.adaptater.out.CategoryJpaEntity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import java.util.Date;
@@ -15,5 +16,7 @@ public class Posts {
     private final String description;
     @Getter
     private final Date createdAt;
+    @Getter
+    private final CategoryJpaEntity category;
 
 }

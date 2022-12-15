@@ -19,7 +19,7 @@ public class CategoryController {
     public String categoryList(Model model) {
         categories = categoryListUseCase.getCategoryList();
         model.addAttribute("categories", categories);
-        return "categoryList";
+        return "CategoryList";
 
     }
 }
