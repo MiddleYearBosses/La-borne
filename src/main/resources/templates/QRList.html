@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- Description du site  -->
   <meta charset="utf-8">
   <title>La borne des soeurs doigts de fée - QR codes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,13 +53,13 @@ header{
   position: relative;
 }
 
-.button{
+.little_button{
   border-radius: 50%;
   box-shadow:5px 10px 20px rgba(0, 0, 0, 0.2);
-  font-size: 1em;
+  font-size: 1.2em;
+  text-align: center;
   display: block;
-  position: absolute;
-  border: solid;
+  position: relative;
 }
 
 #profilbut{
@@ -68,7 +69,6 @@ header{
 }
 
 #session{
-
   background-color: #F6FB7B;
   border-color: pink;
   height: 70px;
@@ -88,18 +88,17 @@ header{
 
 }
 
-#pen{
-
-  background-color: #F6FB7B;
+.pen{
+  width:1.2em;
+  background-color: #ffca18;
+  padding: 0.8em;
   border:none;
-  height: 40px;
-  width: 40px;
-  top: 25px;
-  right: 40px;
-
+  top: -40px;
+  right: -90%;
 }
 
-a{	text-decoration:none;
+a{
+  text-decoration:none;
   color:#fff;
   font-style: italic;
   margin:0;
@@ -113,19 +112,16 @@ a{	text-decoration:none;
 }
 
 .accueil_pg2{
-
   background-color: #FFC7BF;
   border-bottom-color:#FCFFA3;
 }
 
 .accueil_pg3{
-
   background-color: #FFAC7B;
   border-bottom-color:#E5EB36;
 }
 
 .forme{
-
   opacity: 0.7;
   color: #000;
   margin: 10% auto;
@@ -136,14 +132,12 @@ a{	text-decoration:none;
 }
 
 .forme a{
-
   margin:auto;
   margin-top:1em;
   color:#0CE8AD;
 }
 
 form{
-
   background-color: white;
   gap:10px;
   border-radius: 20px;
@@ -151,7 +145,6 @@ form{
 }
 
 #profil{
-
   background-color: rgb(244, 230, 230);
   gap:0px;
   margin: 0;
@@ -160,7 +153,6 @@ form{
 }
 
 .flex{
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,7 +164,6 @@ form{
 /* Main */
 
 .main_pg {
-
   margin:auto;
   padding:0;
   display: grid;
@@ -222,7 +213,6 @@ img{
 main figure{
   margin:2% auto;
   max-width: 500px;
-  max-height: 281.5px;
 }
 
 .figcaption{
@@ -294,22 +284,27 @@ footer{
 
 
 </style>
+<!-- Structure du site en html  -->
 <body class="structure structure_pg2">
-
+<!-- Haut du site  -->
 <header class="accueil_pg2">
   <h1>La Borne des Soeurs Doigts de Fée - QR codes</h1>
   <p>Dans cette section, vous retrouverez les créations de vos stylistes préférés sous forme de QR codes !</p>
 </header>
-
+<!-- Contient les postes  -->
 <main class="main_pg">
-
+  <!-- Réalisation d'un poste - html + java  -->
   <figure th:each="posts : ${posts}">
     <img th:src="${posts.getPicture}">
     <figcaption class="figcaption figcap_pg2"><span th:text="${posts.getTitle}"></span></figcaption>
+    <div class="little_button pen">&#9998;</div>
   </figure>
 
+  <figure>
+    <a th:href="@{/ajouter}"><img class="ajout" src="https://cdn.discordapp.com/attachments/839269329190912041/1061382885640245318/ajout.jpg"></a>
+  </figure>
 </main>
-
+<!-- Bas du site  -->
 <footer class="footer_pg2">
   <a href="mailto:morgane.vb@orange.fr">Contact us !</a>
 </footer>

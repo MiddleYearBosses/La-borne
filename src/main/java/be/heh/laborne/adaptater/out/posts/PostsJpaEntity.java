@@ -1,11 +1,12 @@
 package be.heh.laborne.adaptater.out.posts;
 import be.heh.laborne.adaptater.out.CategoryJpaEntity;
 import be.heh.laborne.adaptater.out.users.UsersJpaEntity;
-import be.heh.laborne.model.Category;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -13,8 +14,9 @@ import java.util.Set;
 @Data
 @Table(name = "posts")
 public class PostsJpaEntity {
+    //Base de donnée faite à partir de JPA (ou comment réaliser une base de donnée en s'aidant de Java)
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id_post")
     private Long idPost;
 
@@ -31,14 +33,10 @@ public class PostsJpaEntity {
     private String description;
 
     @Column(name = "created_at",nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
+    private LocalDateTime created_at = LocalDateTime.now();
 
     @ManyToOne
     private CategoryJpaEntity category;
-
-    /*@Column(name = "id_fix")
-    private long idFix;*/
 
 
 }

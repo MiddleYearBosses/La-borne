@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Info du site  -->
     <meta charset="utf-8">
     <title>La borne des soeurs doigts de fée - Stylistes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,13 +54,13 @@ header{
     position: relative;
 }
 
-.button{
+.little_button{
     border-radius: 50%;
     box-shadow:5px 10px 20px rgba(0, 0, 0, 0.2);
-    font-size: 1em;
+    font-size: 1.2em;
+    text-align: center;
     display: block;
-    position: absolute;
-    border: solid;
+    position: relative;
 }
 
 #profilbut{
@@ -89,15 +90,13 @@ header{
 
 }
 
-#pen{
-
-    background-color: #F6FB7B;
+.pen{
+    width:1.2em;
+    background-color: #ffca18;
+    padding: 0.8em;
     border:none;
-    height: 40px;
-    width: 40px;
-    top: 25px;
-    right: 40px;
-
+    top: -40px;
+    right: -90%;
 }
 
 a{	text-decoration:none;
@@ -223,7 +222,6 @@ img{
 main figure{
     margin:2% auto;
     max-width: 500px;
-    max-height: 281.5px;
 }
 
 .figcaption{
@@ -295,24 +293,27 @@ footer{
 
 
 </style>
-
+<!-- Structure du site  -->
 <body class="structure structure_pg2">
-
+<!-- Haut du site  -->
 <header class="accueil accueil_pg2">
     <h1>La Borne des Soeurs Doigts de Fée - Stylistes</h1>
     <p>Dans cette section, vous retrouverez tous vos stylistes préférés !</p>
 </header>
-
+<!-- Contient les postes  -->
 <main class="main_pg">
-
+    <!-- Réalisation d'un poste - html + java  -->
     <figure th:each="posts : ${posts}">
         <img th:src="${posts.getPicture}">
         <figcaption class="figcaption figcap_pg2"><span th:text="${posts.getTitle}"></span></figcaption>
+        <div class="little_button pen">&#9998;</div>
     </figure>
 
-
+    <figure>
+        <a th:href="@{/ajouter}"><img class="ajout" src="https://cdn.discordapp.com/attachments/839269329190912041/1061382885640245318/ajout.jpg"></a>
+    </figure>
 </main>
-
+<!-- Bas du site  -->
 <footer class="footer footer_pg2">
     <a href="mailto:morgane.vb@orange.fr">Contactez nous !</a>
 </footer>

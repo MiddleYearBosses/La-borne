@@ -5,5 +5,6 @@ import java.util.List;
 
 public interface CategoryListUseCase {
 
+    //méthode pour lister les catégories à l'accueil du site
     List<Category> getCategoryList();
 }
