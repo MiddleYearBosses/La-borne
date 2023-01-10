@@ -1,23 +1,12 @@
 package be.heh.laborne.adaptater.in;
 
-import be.heh.laborne.adaptater.out.posts.PostsJpaEntity;
-import be.heh.laborne.adaptater.out.posts.PostsPersistanceAdapter;
 import be.heh.laborne.model.Posts;
 import be.heh.laborne.port.in.interfaces.PostsUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import java.time.Instant;
-import java.time.LocalDate;
-import java.util.Date;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -57,11 +46,10 @@ public class PostsController {
         return "QRList";
     }
 
+    //Accès à la page d'ajout d'un poste, on créée une instance vide que l'on va remplir pour ensuite être redirigé vers l'accueil une fois cela fait
     @GetMapping("/ajouter")
     public String addPostVue(Model model){
-        model.addAttribute("posts",posts);
-        long millis = System.currentTimeMillis();
-        model.addAttribute("post",new Posts("", "", "", null,null ));
+        model.addAttribute("post",new Posts("", "", "", null,null, null ));
         return "AddPost";
     }
     @PostMapping("/ajouter")
@@ -70,4 +58,24 @@ public class PostsController {
         return "redirect:/";
     }
 
+    //Modifier/Supprimer un poste en sélectionnant ce dernier par son id, redirection vers l'accueil une fois cela fait
+    @RequestMapping(value="/post/{postId}", method = RequestMethod.GET)
+    public String editPostVue(@PathVariable Long postId, Model model){
+        Posts post = postsUseCase.getPost(postId);
+        model.addAttribute("post", post);
+        return "ModifyDeleteProduct";
+    }
+
+    @RequestMapping(value="/post/{postId}", method = RequestMethod.POST)
+    public String editPost(@PathVariable Long postId,@ModelAttribute Posts post, Model model){
+        postsUseCase.modifyPosts(postId, post);
+        model.addAttribute("post", post);
+        return "redirect:/";
+    }
+
+    @RequestMapping(value="/delete/{postId}", method = RequestMethod.GET)
+    public String deletePost(@PathVariable long postId, Model model){
+        postsUseCase.deletePosts(postId);
+        return "redirect:/";
+    }
 }

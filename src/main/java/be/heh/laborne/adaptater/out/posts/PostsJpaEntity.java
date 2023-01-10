@@ -20,8 +20,8 @@ public class PostsJpaEntity {
     @Column(name = "id_post")
     private Long idPost;
 
-    @ManyToMany(targetEntity = UsersJpaEntity.class)
-    private Set Likes;
+    //@ManyToMany(targetEntity = UsersJpaEntity.class)
+   // private Set Likes;
 
     @Column(name = "title",nullable = false)
     private String title;

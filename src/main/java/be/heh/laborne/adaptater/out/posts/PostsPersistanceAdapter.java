@@ -25,15 +25,29 @@ public class PostsPersistanceAdapter implements PostsUseCase {
         return postsMapper.mapToDomainEntity(postsEntity);
     }
 
+    //méthode pour récupérer un produit
+    public Posts getPost(Long postId){
+       PostsJpaEntity selectedPost =  postsRepository.getReferenceById(postId);
+        return postsMapper.mapToSingleEntity(selectedPost);
+    }
+    //Suppression d'un poste
     @Override
     public void deletePosts(Long postId) {
-
+        postsRepository.deleteById(postId);
     }
 
+    //Modification d'un poste
     @Override
-    public void modifyPosts(Long postId) {
+    public void modifyPosts(Long postId, Posts post) {
+        PostsJpaEntity selectedPost =  postsRepository.getReferenceById(postId);
+        selectedPost.setTitle(post.getTitle());
+        selectedPost.setPicture(post.getPicture());
+        selectedPost.setDescription(post.getDescription());
+        selectedPost.setCategory(post.getCategory());
+        postsRepository.save(selectedPost);
     }
 
+    //Ajout d'un poste
     @Override
     public void addPosts(Posts post) {
         PostsJpaEntity postEntity = new PostsJpaEntity();

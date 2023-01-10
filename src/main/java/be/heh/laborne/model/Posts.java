@@ -27,4 +27,6 @@ public class Posts {
     @Getter
     @Setter
     private final CategoryJpaEntity category;
+    @Getter
+    private final Long id;
 }

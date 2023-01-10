@@ -9,9 +9,11 @@ public interface PostsUseCase {
     //méthode pour lister les posts
     List<Posts> getPostsList();
 
+    Posts getPost(Long postId);
+
     void deletePosts(Long postId);
 
-    void modifyPosts(Long postId);
+    void modifyPosts(Long postId, Posts post);
 
     void addPosts(Posts post);
 
