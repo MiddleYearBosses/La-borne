@@ -57,7 +57,7 @@ header{
 .button{
   border-radius: 50%;
   box-shadow:5px 10px 20px rgba(0, 0, 0, 0.2);
-  font-size: 1em;
+  font-size: 1.5em;
   display: block;
   position: absolute;
   border: solid;
@@ -73,11 +73,9 @@ header{
 
   background-color: #F6FB7B;
   border-color: pink;
-  height: 70px;
-  width: 70px;
   top: 10px;
   right: 10px;
-
+  padding: 1em;
 }
 
 #peach{
@@ -302,6 +300,7 @@ footer{
 <header class="accueil_pg1">
   <h1>La Borne des Soeurs Doigts de Fée</h1>
   <p>Bienvenue à la borne des soeurs doigts de fée, ici vous retrouverez les créations d'autres joueurs d'Animal Crossing !</p>
+  <a th:href="@{/profil}" class="button" id="session">👤</a>
 </header>
 <!-- Contient les catégories  -->
 <main class="main_pg">

@@ -14,19 +14,19 @@ import java.util.Date;
 public class Posts {
     @Getter
     @Setter
-    private final String title;
+    public final String title;
     @Getter
     @Setter
-    private final String picture;
+    public final String picture;
     @Getter
     @Setter
-    private final String description;
+    public final String description;
     @Getter
     @Setter
-    private final LocalDateTime createdAt;
+    public final LocalDateTime createdAt;
     @Getter
     @Setter
-    private final CategoryJpaEntity category;
+    public final CategoryJpaEntity category;
     @Getter
-    private final Long id;
+    public final Long id;
 }

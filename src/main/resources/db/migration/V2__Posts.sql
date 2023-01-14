@@ -1,13 +1,12 @@
 CREATE TABLE posts
 (
-    id_post              BIGINT       NOT NULL,
+    id_post              SERIAL PRIMARY KEY,
     title                VARCHAR(255) NOT NULL,
     picture              VARCHAR(255) NOT NULL,
     description          VARCHAR(255),
     created_at           TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     category_id_category BIGINT,
-    id_fix               BIGINT       NOT NULL,
-    CONSTRAINT pk_posts PRIMARY KEY (id_post)
+    id_fix               BIGINT
 );
 
 ALTER TABLE posts

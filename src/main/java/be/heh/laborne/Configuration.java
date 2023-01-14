@@ -24,12 +24,13 @@ public class Configuration {
         private PostsMapper postsMapper = new PostsMapper();
 
         @Bean
-        CategoryListUseCase getStudentListUseCase(){
+        CategoryListUseCase getCategoryListUseCase(){
 
             return new CategoryPersistenceAdapter(categoryRepository, categoryMapper);
         }
         @Bean
         PostsUseCase getPostListUsecase(){
+
                 return new PostsPersistanceAdapter(postsRepository, postsMapper);
         }
 

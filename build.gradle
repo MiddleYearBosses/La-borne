@@ -22,8 +22,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    //testImplementation 'org.testcontainers:testcontainers:1.17.4'
     testImplementation "org.testcontainers:postgresql:1.16.0"
     runtimeOnly 'org.postgresql:postgresql'
 
@@ -31,13 +33,11 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'org.flywaydb:flyway-core:9.4.0'
-
 }
 
 tasks.named('test') {
     useJUnitPlatform()
 }
-targetCompatibility = JavaVersion.VERSION_1_9
+

@@ -1,22 +1,46 @@
 package be.heh.laborne.adaptater.in;
 
+import be.heh.laborne.model.Category;
 import be.heh.laborne.model.Posts;
+import be.heh.laborne.port.in.interfaces.CategoryListUseCase;
 import be.heh.laborne.port.in.interfaces.PostsUseCase;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
-@Controller
+@org.springframework.stereotype.Controller
 @RequiredArgsConstructor
-public class PostsController {
+public class Controller {
 
-    @Autowired
+    private final CategoryListUseCase categoryListUseCase;
     private final PostsUseCase postsUseCase;
+
+    private List<Category> categories;
     private List<Posts> posts;
+
+    //On lie l'id d'une catégorie à un texte qui servira pour notre url
+    private Map<Long,String> routes = Map.of(
+            1L,"/stylistes",
+            2L,"/vetements",
+            3L,"/divers",
+            4L, "/qr"
+    );
+
+    //Accès aux catégories sur le site
+    @GetMapping("/")
+    public String categoryList(Model model) {
+        categories = categoryListUseCase.getCategoryList();
+        model.addAttribute("categories", categories);
+        model.addAttribute("routes", routes);
+        return "CategoryList";
+
+    }
+
     //Accès au contenu des catégories du site + Tri des postes à ajouter dans les catégories en fonction de l'id_category qui y sont lié (voir BDD)
     @GetMapping("/stylistes")
     public String postListStylist(Model model){
@@ -77,5 +101,13 @@ public class PostsController {
     public String deletePost(@PathVariable long postId, Model model){
         postsUseCase.deletePosts(postId);
         return "redirect:/";
+    }
+
+    @GetMapping("/profil")
+    public String home(Model model, @AuthenticationPrincipal OidcUser principal) {
+        if (principal != null) {
+            model.addAttribute("profile", principal.getClaims());
+        }
+        return "index";
     }
 }

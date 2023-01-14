@@ -8,10 +8,10 @@ import lombok.RequiredArgsConstructor;
 public class Category {
 
     @Getter
-    private final String name;
+    public final String name;
     @Getter
-    private final String link;
+    public final String link;
     @Getter
-    private final long id;
+    public final long id;
 
 }

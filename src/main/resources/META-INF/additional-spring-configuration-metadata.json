@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "auth0",
+      "type": "java.lang.String",
+      "description": "Description for auth0."
+  }
+] }

@@ -1,6 +1,5 @@
 package be.heh.laborne.adaptater;
 
-import be.heh.laborne.adaptater.in.CategoryController;
 import be.heh.laborne.model.Category;
 import be.heh.laborne.port.in.interfaces.CategoryListUseCase;
 import org.hamcrest.Matchers;
@@ -35,10 +34,10 @@ public class AdapaterWebTest {
     @Test
     public void testStudentController() throws Exception {
 
-        categories.add(new Category("Stylistes","img/createurs.jpg"));
-        categories.add(new Category("Vêtements","img/vetements.jpg"));
-        categories.add(new Category("Divers","img/divers.jpg"));
-        categories.add(new Category("QR codes","img/QR.jpg"));
+        categories.add(new Category("Stylistes","img/createurs.jpg",1));
+        categories.add(new Category("Vêtements","img/vetements.jpg",2));
+        categories.add(new Category("Divers","img/divers.jpg",3));
+        categories.add(new Category("QR codes","img/QR.jpg",4));
 
         //Stub
         Mockito.when(categoryListUseCase.getCategoryList()).thenReturn(categories);
