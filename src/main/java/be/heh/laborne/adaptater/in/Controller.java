@@ -108,6 +108,6 @@ public class Controller {
         if (principal != null) {
             model.addAttribute("profile", principal.getClaims());
         }
-        return "index";
+        return "profils";
     }
 }

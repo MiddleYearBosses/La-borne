@@ -33,13 +33,6 @@ html {
           url(https://cdn.discordapp.com/attachments/839269329190912041/1047962859734310983/fond_de_site_AC.jpg);
 }
 
-.structure_pg2{
-  background-color: #FFC7BF;
-  background-image:
-          url(https://cdn.discordapp.com/attachments/839269329190912041/1047962859990159360/large.jpg);
-}
-
-
 /* Header et boutons */
 
 header{
@@ -51,50 +44,6 @@ header{
   border-bottom-style:solid;
   border-bottom-width:3px;
   position: relative;
-}
-
-.little_button{
-  border-radius: 50%;
-  box-shadow:5px 10px 20px rgba(0, 0, 0, 0.2);
-  font-size: 1.2em;
-  text-align: center;
-  display: block;
-  position: relative;
-}
-
-#profilbut{
-  background-color: #0CE8AD;
-  border-color: white;
-  width: 300px;
-}
-
-#session{
-  background-color: #F6FB7B;
-  border-color: pink;
-  height: 70px;
-  width: 70px;
-  top: 10px;
-  right: 10px;
-
-}
-
-#peach{
-  background-color: white;
-  border:none;
-  height: 40px;
-  width: 40px;
-  top: 25px;
-  right: -10px;
-
-}
-
-.pen{
-  width:1.2em;
-  background-color: #F6FB7B;
-  padding: 0.8em;
-  border:none;
-  top: -40px;
-  right: -90%;
 }
 
 a{
@@ -109,16 +58,6 @@ a{
 .accueil_pg1{
   border-bottom-color:#F6FB7B;
   background-color: #0CE8AD;
-}
-
-.accueil_pg2{
-  background-color: #FFC7BF;
-  border-bottom-color:#FCFFA3;
-}
-
-.accueil_pg3{
-  background-color: #FFAC7B;
-  border-bottom-color:#E5EB36;
 }
 
 .forme{
@@ -144,14 +83,6 @@ form{
 
 }
 
-#profil{
-  background-color: rgb(244, 230, 230);
-  gap:0px;
-  margin: 0;
-  padding-bottom: 30%;
-
-}
-
 .flex{
   display: flex;
   justify-content: center;
@@ -162,16 +93,6 @@ form{
 }
 
 /* Main */
-
-.main_pg {
-  margin:auto;
-  padding:0;
-  display: grid;
-  grid-template-columns : 50% 50%;
-  gap:30px;
-  width: 95%;
-
-}
 
 h1{
   margin:0;
@@ -195,54 +116,9 @@ img{
   max-height: 281.5px;
 }
 
-
-.nook{
-  width:100px;
-  height: 100px;
-  align-items: center;
-  border-radius: 50%;
-  opacity: 1;
-
-}
-
-.ajout{
-  width: 500px;
-  opacity: 0.8;
-}
-
 main figure{
   margin:2% auto;
   max-width: 500px;
-}
-
-.figcaption{
-  position:relative;
-  bottom:20px;
-  left:0;
-  right:0;
-  padding:0;
-  text-align:center;
-  height:15%;
-  max-width: 500px;
-  line-height:2;
-  font-style:italic;
-  border: solid ;
-}
-
-.figcap_pg1{
-  background-color:pink;
-  border-color:white;
-  width:98%;
-}
-
-.figcap_pg2{
-  background-color:#62B38E;
-  border-color:grey;
-}
-
-.figcap_pg3{
-  background-color:#42E4FF;
-  border-color:white;
 }
 
 /* Barre de déroulement  */
@@ -272,22 +148,11 @@ footer{
   border-top-color:#F6FB7B;
 }
 
-.footer_pg2{
-  background-color: #FFC7BF;
-  border-top-color:#FDFFC9;
-}
-
-.footer_pg3{
-  background-color: #FFAC7B;
-  border-top-color:#E5EB36;
-}
-
-
 </style>
 
 <body class="structure structure_pg1">
 <header class="accueil_pg1">
-  <h1>La Borne des Soeurs Doigts de Fée</h1>
+  <a th:href="@{/}"><h1>La Borne des Soeurs Doigts de Fée</h1></a>
   <h2>Que faire ?</h2>
 </header>
 

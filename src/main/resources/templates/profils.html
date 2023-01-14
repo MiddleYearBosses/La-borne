@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +33,7 @@ html {
           url(https://cdn.discordapp.com/attachments/839269329190912041/1047962859734310983/fond_de_site_AC.jpg);
 }
 
+
 /* Header et boutons */
 
 header{
@@ -44,6 +45,12 @@ header{
   border-bottom-style:solid;
   border-bottom-width:3px;
   position: relative;
+}
+
+#profilbut{
+  background-color: #0CE8AD;
+  border-color: white;
+  width: 300px;
 }
 
 a{
@@ -67,6 +74,7 @@ a{
   padding: 5%;
   display: flex;
   flex-flow: column nowrap;
+  text-align: center;
 
 }
 
@@ -74,6 +82,7 @@ a{
   margin:auto;
   margin-top:1em;
   color:#0CE8AD;
+  font-size: 1.5em;
 }
 
 form{
@@ -83,15 +92,20 @@ form{
 
 }
 
+.profil{
+  background-color: rgb(244, 230, 230);
+  gap:0px;
+  margin: 0;
+}
+
 .flex{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  margin: 5% 0;
 
 }
-
 /* Main */
 
 h1{
@@ -116,6 +130,16 @@ img{
   max-height: 281.5px;
 }
 
+
+.nook{
+  width:100px;
+  height: 100px;
+  align-items: center;
+  border-radius: 50%;
+  opacity: 1;
+
+}
+
 main figure{
   margin:2% auto;
   max-width: 500px;
@@ -130,7 +154,7 @@ html::-webkit-scrollbar{
 
 /* Footer */
 footer{
-  margin:0;
+  margin-top:15em;
   padding:0;
   position: sticky;
   bottom:0;
@@ -150,39 +174,30 @@ footer{
 
 </style>
 
-<body class="structure structure_pg1">
+<body  class="structure structure_pg1">
 <header class="accueil_pg1">
   <a th:href="@{/}"><h1>La Borne des Soeurs Doigts de Fée</h1></a>
-  <h2>Que faire ?</h2>
+  <h2>Profils utilisateurs !</h2>
 </header>
 
 <div class="flex">
-  <!-- Envoie les données au controler ajouterc.php -->
-  <form class="forme" action="#" th:action="@{/ajouter}" th:object="${post}" method="post">
+  <div class="forme profil">
+    <div sec:authorize="!isAuthenticated()">
+      <a th:href="@{/oauth2/authorization/auth0}">Log In</a>
+    </div>
+    <div sec:authorize="isAuthenticated()">
+      <img class="nook" th:src="${profile.get('picture')}" th:attr="alt=${profile.get('name')}"/>
+      <h2 th:text="${profile.get('name')}"></h2>
+      <p th:text="${profile.get('email')}"></p>
+      <a th:href="@{/logout}">Log Out</a>
+    </div>
+    <a  th:href="@{/}"><button id="profilbut">Retour</button></a>
 
-    <label>Titre :</label>
-    <input type="text" name="title" required maxlength="30" th:field="*{title}">
-
-    <label>Image :</label>
-    <input type="text" name="picture" required maxlength="200" th:field="*{picture}">
-
-    <label>Description :</label>
-    <input type="text" name="description" maxlength="50" th:field="*{description}">
-
-    <label>Categorie :</label>
-    <select name="category" th:field="*{category}">
-      <option value="1">Stylistes</option>
-      <option value="2">Vêtements</option>
-      <option value="3">Divers</option>
-      <option value="4">QR Codes</option>
-    </select>
-
-    <button style="margin-top:1.5em;" type="submit" value="Submit">Ajouter</button>
-
-  </form>
+  </div>
 </div>
 
 <footer class="footer_pg1">
+  <!-- Contacter l'admin -->
   <a href="mailto:morgane.vb@orange.fr"> Contactez nous !</a>
 </footer>
 </body>
